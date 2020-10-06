@@ -9,7 +9,12 @@ const account = {
         }
         return account.balance += moneyAmount
     },
-    withdraw: (withdrawAmount) => account.balance -= withdrawAmount
+    withdraw: (withdrawAmount) => {
+        if(account.balance == 0){
+            return "transaction refused"
+        }
+        return account.balance -= withdrawAmount
+    }
 
 };
 
@@ -38,6 +43,11 @@ describe('withdraw money from a customer account ', () => {
         'his account balance will decrease by the amount of the withdraw ' +
         'when his balance account equal to 1', () => {
         expect(account.withdraw(1)).toStrictEqual(0)
+    });
+    test('if a customer take a withdraw otherwise ' +
+        'his account balance will decrease by the amount of the withdraw ' +
+        'when his balance account equal to 0', () => {
+        expect(account.withdraw(1)).toStrictEqual("transaction refused")
     });
 
 });
