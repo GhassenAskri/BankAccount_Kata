@@ -31,4 +31,11 @@ describe('Deposit money from a customer to his account', () => {
         expect(account.deposit(0.001)).toStrictEqual("Deposit must be superior to €0.01")
     });
 });
+describe('withdraw money from a customer account ', () => {
+    test('if a customer take a withdraw otherwise ' +
+        'his account balance will decrease by the amount of the withdraw', () => {
+        expect(account.deposit(1)).toStrictEqual(-1)
+    });
+
+});
 
