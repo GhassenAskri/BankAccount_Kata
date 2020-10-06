@@ -4,7 +4,7 @@ describe('Test our  test tool JEST', () => {
     });
 });
 
-var account = {balance: 0, deposit :(moneyAmount) => account.balance += moneyAmount};
+const account = {balance: 0, deposit :(moneyAmount) => account.balance += moneyAmount};
 
 
 
