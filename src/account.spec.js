@@ -4,14 +4,14 @@ describe('Test our  test tool JEST', () => {
     });
 });
 
-var account = {balance : 0};
+var account = {balance: 0, deposit :(moneyAmount) => account.balance += moneyAmount};
 
-const deposit = (moneyAmount) => account.balance += moneyAmount;
+
 
 
 describe('Deposit money from a customer to his account', () => {
     test('if a customer deposit money to his account otherwise ' +
-        'his account balance will increase by the amount of the deposit',() => {
-            expect(deposit(1)).toStrictEqual( 1)
-        });
+        'his account balance will increase by the amount of the deposit', () => {
+        expect(account.deposit(1)).toStrictEqual(1)
+    });
 });
