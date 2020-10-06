@@ -1,8 +1,12 @@
-const account = {balance: 0, deposit :(moneyAmount) => account.balance += moneyAmount};
-
-
-
-
+const account = {
+    balance: 0,
+    deposit: (moneyAmount) => {
+        if(moneyAmount == 0) {
+            return "Nothing to deposit"
+        }
+        return account.balance += moneyAmount
+    }
+};
 
 describe('Test our  test tool JEST', () => {
     test('if 2=2 = true ', () => {
@@ -14,5 +18,9 @@ describe('Deposit money from a customer to his account', () => {
     test('if a customer deposit money to his account otherwise ' +
         'his account balance will increase by the amount of the deposit', () => {
         expect(account.deposit(1)).toStrictEqual(1)
+    });
+    test('if a customer deposit money equal to zero to his account otherwise ' +
+        'his account balance will not increase by the amount of the deposit', () => {
+        expect(account.deposit(0)).toStrictEqual("Nothing to deposit")
     });
 });
