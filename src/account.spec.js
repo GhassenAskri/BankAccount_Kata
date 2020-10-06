@@ -1,13 +1,14 @@
+const account = {balance: 0, deposit :(moneyAmount) => account.balance += moneyAmount};
+
+
+
+
+
 describe('Test our  test tool JEST', () => {
     test('if 2=2 = true ', () => {
         expect(2 == 2).toStrictEqual(true)
     });
 });
-
-const account = {balance: 0, deposit :(moneyAmount) => account.balance += moneyAmount};
-
-
-
 
 describe('Deposit money from a customer to his account', () => {
     test('if a customer deposit money to his account otherwise ' +
