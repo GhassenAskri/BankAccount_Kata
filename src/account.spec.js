@@ -1,14 +1,16 @@
 const account = {
     balance: 0,
     deposit: (moneyAmount) => {
-        if(moneyAmount == 0) {
+        if (moneyAmount == 0) {
             return "Nothing to deposit"
         }
-        if (moneyAmount < 0.01){
+        if (moneyAmount < 0.01) {
             return "Deposit must be superior to €0.01"
         }
         return account.balance += moneyAmount
-    }
+    },
+    withdraw: (withdrawAmount) => account.balance -= withdrawAmount
+
 };
 
 describe('Test our  test tool JEST', () => {
@@ -33,8 +35,9 @@ describe('Deposit money from a customer to his account', () => {
 });
 describe('withdraw money from a customer account ', () => {
     test('if a customer take a withdraw otherwise ' +
-        'his account balance will decrease by the amount of the withdraw', () => {
-        expect(account.deposit(1)).toStrictEqual(-1)
+        'his account balance will decrease by the amount of the withdraw ' +
+        'when his balance account equal to 1', () => {
+        expect(account.withdraw(1)).toStrictEqual(0)
     });
 
 });
